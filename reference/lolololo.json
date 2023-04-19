@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "TheCodeBuzz-Service",
+    "title": "Pets",
     "version": "v1"
   },
   "paths": {
@@ -134,14 +134,7 @@
         ]
       }
     },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "description": "JWT Authorization header using the Bearer scheme.",
-        "scheme": "barer",
-        "bearerFormat": "JWT"
-      }
-    }
+    "securitySchemes": {}
   },
   "security": [
     {
