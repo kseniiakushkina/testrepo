@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TheCodeBuzz-Service",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/pet/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "pet id"
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pet"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-pet-id",
+        "parameters": []
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-api-pet-id",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pet"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-api-pet-id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "pet": {
+        "title": "pet",
+        "x-stoplight": {
+          "id": "zvw0k6rpbm1uc"
+        },
+        "type": "object",
+        "x-examples": {
+          "Example 2": {
+            "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+            "name": "Boo",
+            "paws": [
+              {
+                "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+                "type": "string",
+                "color": "string"
+              }
+            ]
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "example": "Boo"
+          },
+          "paws": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 4,
+            "items": {
+              "$ref": "#/components/schemas/paw"
+            }
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "paw": {
+        "title": "paw",
+        "x-stoplight": {
+          "id": "0wxtvqw2z017d"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme.",
+        "scheme": "barer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}
