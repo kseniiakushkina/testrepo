@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+lp<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Перейти в Госуслуги</title>
   <!-- Указываем deep link для приложения -->
-  <link rel="alternate" href="gosuslugi://lkp/polls" />
+  <link rel="alternate" href="gosuslugi://help" />
   <script>
     function redirectToGosuslugi() {
       // Попробуем открыть приложение через deep link
-      window.location.href = "gosuslugi://lkp/polls";
+      window.location.href = "gosuslugi://help";
 
       // Если deep link не сработает (например, приложение не установлено),
       // через 1 секунду откроем веб-сайт
       setTimeout(() => {
-        window.location.href = "https://www.gosuslugi.ru/lkp/polls";
+        window.location.href = "https://www.gosuslugi.ru/help";
       }, 1000);
     }
   </script>
