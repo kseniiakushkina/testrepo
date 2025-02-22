@@ -4,30 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Войти в Госуслуги</title>
-  <!-- Указываем deep link для приложения -->
-  <link rel="alternate" href="gosuslugi://help" />
-</head>
-<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+  <style>
+    /* Общий стиль для страницы */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-  <!-- Центрируем содержимое -->
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+    /* Контейнер для заголовка и кнопок */
+    .container {
+      text-align: center;
+    }
+
+    /* Заголовок */
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Общий стиль для кнопок */
+    .button {
+      display: inline-block;
+      width: 200px; /* Фиксированная ширина для одинакового размера */
+      padding: 15px 0;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 10px 0; /* Отступ между кнопками */
+      transition: background-color 0.3s ease;
+    }
+
+    /* Эффект при наведении */
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
     <!-- Заголовок -->
-    <h1 style="margin-bottom: 20px; color: #333;">Войти в Госуслуги</h1>
+    <h1>Войти в Госуслуги</h1>
 
     <!-- Кнопка для перехода через сайт -->
-    <button 
-      onclick="window.location.href='https://www.gosuslugi.ru/help';" 
-      style="padding: 15px 30px; font-size: 18px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 10px;">
-      Через сайт
-    </button>
+    <a href="https://www.gosuslugi.ru/help" class="button">Через сайт</a>
 
     <!-- Кнопка для открытия через мобильное приложение -->
-    <button 
-      onclick="window.location.href='gosuslugi://help';" 
-      style="padding: 15px 30px; font-size: 18px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Через мобильное приложение
-    </button>
+    <a href="gosuslugi://help" class="button">Через мобильное приложение</a>
   </div>
-
 </body>
 </html>
