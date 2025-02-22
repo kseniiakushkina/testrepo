@@ -48,6 +48,12 @@
       background-color: #0056b3;
     }
   </style>
+  <script>
+    function openInBrowser() {
+      // Принудительное открытие сайта в браузере
+      window.open('https://www.gosuslugi.ru/help');
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -55,7 +61,7 @@
     <h1>Войти в Госуслуги</h1>
 
     <!-- Кнопка для перехода через сайт -->
-    <a href="https://www.gosuslugi.ru/help" class="button" target="_blank">Через сайт</a>
+    <button class="button" onclick="openInBrowser()">Через сайт</button>
 
     <!-- Кнопка для открытия через мобильное приложение -->
     <a href="gosuslugi://help" class="button">Через мобильное приложение</a>
